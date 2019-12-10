@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Email Inbox</title>
+
+</head>
+
+<body>
+  <form action="mailto:wtao@unb.ca">
+  Email Address<input name='EmailAdd' type='text' value="wtao@unb.ca"><br>
+  Subject<input name='subject' type='text'><br>
+  Eamil Text <textarea name="body"></textarea><br>
+  <input type="submit" value="Send">
+  </form>
+</body>
+
+<script type="text/javascript">
+
+  function addFile(){
+      var oTable=document.getElementById("text");
+      var oTr=oTable.insertRow();
+      var oTbFile=oTr.insertCell();
+      var oTbDel=oTr.insertCell();
+      oTbFile.innerHTML='<input type="file"/>';
+  }
+  function delFile(obj){
+      var oTabNode=obj.parentNode;
+      while(oTabNode.nodeName!="TR"){
+        oTabNode=oTabNode.parentNode;
+      }
+  oTabNode.parentNode.removeChild(oTabNode);
+  }
+</script>
+
+<body>
+  <table id="text">
+    <tr>
+      <td><a href="javascript:viod(0);" onclick="addFile();">Add attachments</a></td>
+    </tr>
+  </table>
+</body>
+
+</html>
